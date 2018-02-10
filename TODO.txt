@@ -1,0 +1,13 @@
+
+SEPARATE
+========
+
+*   Test virtual calls via base classes (polimorphism), also pure virtuals
+*   Test function overloads
+*   Test const
+*   Test volatile (this should just given a compiler error, maybe a static_assert)
+
+From Eiffel site
+----------------
+*   (s->&*x::f)() should be allowed only if s is of type separate<x>::arg, and not directly on separate<x>
+
