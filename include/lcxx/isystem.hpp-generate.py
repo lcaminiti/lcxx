@@ -16,13 +16,13 @@ none_defined = ''
 and_ = '       '
 for i in range(0, max_includes):
     includes = includes + str('''
-#ifdef LXX_ISYSTEM{0}
-    #include LXX_ISYSTEM{0}
+#ifdef LCXX_ISYSTEM{0}
+    #include LCXX_ISYSTEM{0}
 #endif
-#undef LXX_ISYSTEM{0}
+#undef LCXX_ISYSTEM{0}
     ''').format(i)
     none_defined = none_defined + and_ + str(
-            '!defined(LXX_ISYSTEM{0})').format(i)
+            '!defined(LCXX_ISYSTEM{0})').format(i)
     and_ = ' \\\n        && '
         
 print('''
@@ -33,7 +33,7 @@ print('''
 // No #include guard here.
 
 #if {1}
-    #error "Included \\"isystem.hpp\\" with no `LXX_ISYSTEM<n>` header defined"
+    #error "Included \\"isystem.hpp\\" with no `LCXX_ISYSTEM<n>` header defined"
 #endif
 
 // Compiler-specific disable all warnings but only for following #includes.

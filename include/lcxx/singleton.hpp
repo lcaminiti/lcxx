@@ -1,8 +1,8 @@
 
-#ifndef LXX_SINGLETON_HPP_
-#define LXX_SINGLETON_HPP_
+#ifndef LCXX_SINGLETON_HPP_
+#define LCXX_SINGLETON_HPP_
 
-namespace lxx {
+namespace lcxx {
 
 template<class C>
 C& singleton() {

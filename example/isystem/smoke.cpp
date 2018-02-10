@@ -1,9 +1,9 @@
 
 #include "smoke.hpp" // Warnings enabled for my headers.
 
-#define LXX_ISYSTEM0 <boost/static_assert.hpp>
-#define LXX_ISYSTEM1 <boost/type_traits.hpp>
-#include <lxx/isystem.hpp> // Include Boost headers above, disabling warnings.
+#define LCXX_ISYSTEM0 <boost/static_assert.hpp>
+#define LCXX_ISYSTEM1 <boost/type_traits.hpp>
+#include <lcxx/isystem.hpp> // Include Boost headers above, disabling warnings.
 
 #include <vector> // Warnings already always disable for STL.
 #include <memory>

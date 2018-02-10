@@ -1,10 +1,10 @@
 
-#ifndef LXX_SCOPE_EXIT_HPP_
-#define LXX_SCOPE_EXIT_HPP_
+#ifndef LCXX_SCOPE_EXIT_HPP_
+#define LCXX_SCOPE_EXIT_HPP_
 
 #include <functional>
 
-namespace lxx {
+namespace lcxx {
 
 class scope_exit {
 public:

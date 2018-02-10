@@ -1,5 +1,5 @@
-# Libraries for C++ (LXX)
-My experimental C++ libraries.
+# My Libraries for C++ (LCXX)
+My experimental libraries for C++.
 
 * These libraries are all experimental! In general, they might not be finished, they might not be debugged, they might lack of appropriate tests or documentation... they are just a collection of work-in-progress.
 
