@@ -1,12 +1,12 @@
 
-#ifndef SEPARATE_DETAIL_THREADSAFE_QUEUE_HPP_
-#define SEPARATE_DETAIL_THREADSAFE_QUEUE_HPP_
+#ifndef LCXX_SEPARATE_DETAIL_THREADSAFE_QUEUE_HPP_
+#define LCXX_SEPARATE_DETAIL_THREADSAFE_QUEUE_HPP_
 
 #include <queue>
 #include <mutex>
 #include <condition_variable>
 
-namespace separate_detail {
+namespace lcxx { namespace separate_detail {
 
 template<typename T>
 class threadsafe_queue {
@@ -35,7 +35,7 @@ private:
     std::condition_variable cond_;
 };
 
-} // namespace
+} } // namespace
 
 #endif // #include guard
 

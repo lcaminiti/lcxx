@@ -1,4 +1,4 @@
-# my experimental Libraries for C++ (LCXX)
+# My experimental Libraries for C++ (LCXX)
 
 * These libraries are all experimental! In general, they might not be finished, they might not be debugged, they might lack of appropriate tests or documentation... they are just a collection of work-in-progress.
 

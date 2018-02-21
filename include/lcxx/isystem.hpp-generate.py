@@ -33,7 +33,7 @@ print('''
 // No #include guard here.
 
 #if {1}
-    #error "Included \\"isystem.hpp\\" with no `LCXX_ISYSTEM<n>` header defined"
+    #error "included \\"isystem.hpp\\" with no `LCXX_ISYSTEM<n>` header defined"
 #endif
 
 // Compiler-specific disable all warnings but only for following #includes.

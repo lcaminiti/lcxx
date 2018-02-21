@@ -1,17 +1,17 @@
 
-#ifndef SEPARATE_DETAIL_CALL_HPP_
-#define SEPARATE_DETAIL_CALL_HPP_
+#ifndef LCXX_SEPARATE_DETAIL_CALL_HPP_
+#define LCXX_SEPARATE_DETAIL_CALL_HPP_
 
-#include <separate/detail/processor.hpp>
-#include <separate/detail/type_traits.hpp>
-#include <separate/detail/debug.hpp>
+#include <lcxx/separate/detail/processor.hpp>
+#include <lcxx/separate/detail/type_traits.hpp>
+#include <lcxx/debug.hpp>
 #include <functional>
 
 // TODO: For handles, the following binds need to apply ref and cref to Args... how do I do that?
 
 // TODO: Test we are not copying function arguments and results more than strictly necessary (they should be copied only once into bind and be moved around after that).
 
-namespace separate_detail {
+namespace lcxx { namespace separate_detail {
 
 template<bool IsCommand, class C, typename FP>
 class call { // Command (async).
@@ -22,7 +22,7 @@ public:
 
     template<typename... Args>
     void operator()(Args&&... args) const {
-        SEPARATE_DETAIL_DLOG("called command");
+        LCXX_DLOG("called command");
         proc_.async(std::bind(fp_, &obj_, args...));
     }
     
@@ -42,7 +42,7 @@ public:
 
     template<typename... Args>
     result_type operator()(Args&&... args) const {
-        SEPARATE_DETAIL_DLOG("called query");
+        LCXX_DLOG("called query");
         return proc_.template sync<result_type>(std::bind(fp_, &obj_, args...));
     }
     
@@ -52,7 +52,7 @@ private:
     FP fp_;
 };
 
-} // namespace
+} } // namespace
 
 #endif // #include guard
 

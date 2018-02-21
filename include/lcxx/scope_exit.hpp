@@ -10,6 +10,9 @@ class scope_exit {
 public:
     template<typename F>
     explicit scope_exit(F f) : f_(f) {}
+
+    scope_exit(scope_exit const&) = delete;
+    scope_exit& operator=(scope_exit const&) = delete;
     
     ~scope_exit() noexcept(false) { f_(); }
 

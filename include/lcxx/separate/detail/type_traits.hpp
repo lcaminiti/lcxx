@@ -1,6 +1,6 @@
 
-#ifndef SEPARATE_DETAIL_TYPE_TRAITS_HPP_
-#define SEPARATE_DETAIL_TYPE_TRAITS_HPP_
+#ifndef LCXX_SEPARATE_DETAIL_TYPE_TRAITS_HPP_
+#define LCXX_SEPARATE_DETAIL_TYPE_TRAITS_HPP_
 
 #include <boost/function_types/is_member_function_pointer.hpp>
 #include <boost/function_types/result_type.hpp>
@@ -13,7 +13,7 @@
 #include <type_traits>
 #include <cstddef>
 
-namespace separate_detail {
+namespace lcxx { namespace separate_detail {
 
 namespace type_traits_ {
     template<typename Seq, typename Pred>
@@ -94,7 +94,7 @@ struct is_command :
     >
 {};
 
-} // namespace
+} } // namespace
 
 #endif // #include guard
 

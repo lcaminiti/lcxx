@@ -1,0 +1,3 @@
+
+clang++ -Wall -std=c++1z -I ~/lcxx/include/ -I ~/opt/boost-master/ $@ -DBOOST_ALL_DYN_LINK ~/opt/boost-master/stage/lib/libboost_contract.dll.a ~/opt/boost-master/stage/lib/libboost_system.dll.a
+

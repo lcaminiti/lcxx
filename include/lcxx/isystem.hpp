@@ -55,7 +55,7 @@
         && !defined(LCXX_ISYSTEM47) \
         && !defined(LCXX_ISYSTEM48) \
         && !defined(LCXX_ISYSTEM49)
-    #error "Included \"isystem.hpp\" with no `LCXX_ISYSTEM<n>` header defined"
+    #error "included \"isystem.hpp\" with no `LCXX_ISYSTEM<n>` header defined"
 #endif
 
 // Compiler-specific disable all warnings but only for following #includes.

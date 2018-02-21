@@ -1,16 +1,16 @@
 
-#ifndef SEPARATE_DETAIL_PROCESSOR_HPP_
-#define SEPARATE_DETAIL_PROCESSOR_HPP_
+#ifndef LCXX_SEPARATE_DETAIL_PROCESSOR_HPP_
+#define LCXX_SEPARATE_DETAIL_PROCESSOR_HPP_
 
-#include <separate/detail/threadsafe_queue.hpp>
-#include <separate/detail/debug.hpp>
+#include <lcxx/separate/detail/threadsafe_queue.hpp>
+#include <lcxx/debug.hpp>
 #include <boost/any.hpp>
 #include <atomic>
 #include <future>
 #include <thread>
 #include <utility>
 
-namespace separate_detail {
+namespace lcxx { namespace separate_detail {
 
 class processor {
 private:
@@ -23,7 +23,7 @@ public:
     
     ~processor() {
         done_ = true;
-        wake();
+        wakeup();
         thread_.join();
     }
     
@@ -38,7 +38,7 @@ public:
         return boost::any_cast<R>(r.get());
     }
 
-    // Push a blocking no-task to wait until it is processed.
+    // Push a blocking no-op call to wait until it is processed.
     void syncronize() { sync<int>([] { return 0; }); }
 
 private:
@@ -59,18 +59,18 @@ private:
     };
 
     // Push a non-blocking no-op task forcing thread out of wait_for_pop.
-    void wake() { async([] {}); }
+    void wakeup() { async([] {}); }
 
     void process() {
         // TODO: Move object construction there.
         while(!done_ || !tasks_.empty()) {
             task t;
-            SEPARATE_DETAIL_DLOG("thread waiting for work");
+            LCXX_DLOG("thread waiting for work");
             tasks_.wait_for_pop(t);
-            SEPARATE_DETAIL_DLOG("thread starting work");
+            LCXX_DLOG("thread starting work");
             t();
-            SEPARATE_DETAIL_DLOG("thread finished work");
-        }
+            LCXX_DLOG("thread finished work");
+        } // Destroy task.
     }
 
     // Oder of these declarations matter for thread safety.
@@ -79,7 +79,7 @@ private:
     std::thread thread_;
 };
 
-} // namespace
+} } // namespace
 
 #endif // #include guard
 

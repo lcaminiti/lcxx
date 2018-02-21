@@ -1,0 +1,4 @@
+
+export PATH=$PATH:~/opt/boost-master/stage/lib/
+$@
+
